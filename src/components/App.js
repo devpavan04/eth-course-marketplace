@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Web3 from 'web3'
 import './App.css';
 import Marketplace from '../abis/Marketplace.json'
-import Navbar from './Navbar'
 import Main from './Main'
 
 const ipfsClient = require('ipfs-http-client')
@@ -14,6 +13,7 @@ class App extends Component {
     super(props)
     this.state = {
       account: '',
+      accountBalance: 0,
       resourceCount: 0,
       resources: [],
       loading: true,
@@ -45,6 +45,12 @@ class App extends Component {
 
     const accounts = await web3.eth.getAccounts()
     this.setState({ account: accounts[0] })
+
+    let accountBalance = await web3.eth.getBalance(accounts[0]);
+    console.log(accountBalance)
+    accountBalance = web3.utils.fromWei(accountBalance, 'ether')
+    console.log(accountBalance)
+    this.setState({ accountBalance })
 
     const networkId = await web3.eth.net.getId()
 
@@ -94,27 +100,25 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className=''>
 
-        <Navbar account={this.state.account} />
-
-        <div className="container-fluid mt-5">
-          <div className="row">
-            <div role="main" className="col-lg-12 d-flex">
-              {
-                this.state.loading
-                  ?
-                  <div id="loader" className="text-center"><p className="text-center">Loading...</p></div>
-                  :
-                  <Main
-                    resources={this.state.resources}
-                    addResourceDetails={this.addResourceDetails}
-                    buyResource={this.buyResource}
-                    onSubmit={this.onSubmit}
-                    captureFile={this.captureFile}
-                  />
-              }
-            </div>
+        <div className="mt-5">
+          <div role="main" className="">
+            {
+              this.state.loading
+                ?
+                <div id="loader" className="text-center"><p className="text-center">Loading...</p></div>
+                :
+                <Main
+                  resources={this.state.resources}
+                  addResourceDetails={this.addResourceDetails}
+                  buyResource={this.buyResource}
+                  onSubmit={this.onSubmit}
+                  captureFile={this.captureFile}
+                  account={this.state.account}
+                  accountBalance={this.state.accountBalance}
+                />
+            }
           </div>
         </div>
 

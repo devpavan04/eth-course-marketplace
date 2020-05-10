@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 
 class Main extends Component {
 
@@ -30,71 +31,86 @@ class Main extends Component {
 
   render() {
     return (
-      <div id="content">
-
-        <h1 className='m-3'>Upload your resouces link to the IPFS</h1>
-
-        <form>
-          <div className="form-group mr-sm-2">
-            <input
-              id="resourceName"
-              type="text"
-              ref={(input) => { this.resourceName = input }}
-              className="form-control m-3"
-              placeholder="Resource Name"
-              required />
+      <div id="content" className='design mt-0'>
+        <div className='m-4'>
+          <img src={`https://robohash.org/${this.props.account}?300x300`} className='float-right robo'></img>
+          <div className='user'>
+            <h2><b><i>Account Details :</i></b></h2>
+            <h5>Address :  {this.props.account}</h5>
+            <h5>Account Balance :  {this.props.accountBalance} ETH</h5>
           </div>
-          <div className="form-group mr-sm-2">
-            <input
-              id="resourcePrice"
-              type="text"
-              ref={(input) => { this.resourcePrice = input }}
-              className="form-control m-3"
-              placeholder="Resource Price"
-              required />
-          </div>
-        </form>
-        <input type='file' onChange={this.captureFile} className='m-3' />
-        <button type="submit" className="btn btn-primary btn-block m-3" onClick={this.formSubmit}>Upload Resource Details</button>
-
-        <h2>Buy Resource</h2>
-
-        <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">Sl no.</th>
-              <th scope="col">Resource Name</th>
-              <th scope="col">Resource Link Price</th>
-              <th scope="col">Owner</th>
-              <th scope="col" width='1000px'>Buy Link</th>
-            </tr>
-          </thead>
-          <tbody id="resourceList">
-            {this.props.resources.map((resource, key) => {
-              return (
-                <tr key={key}>
-                  <th scope="row">{resource.id.toString()}</th>
-                  <td>{resource.name}</td>
-                  <td>{window.web3.utils.fromWei(resource.price.toString(), 'Ether')} Eth</td>
-                  <td>{resource.owner}</td>
-                  <td>
-                    {
-                      !resource.purchased
-                        ?
-                        <button name={resource.id} value={resource.price} className='btn btn-primary btn-block'
-                          onClick={(event) => { this.props.buyResource(event.target.name, event.target.value) }}>
-                          Buy</button>
-                        :
-                        <h4>Download the resource link at <i>{`https://ipfs.infura.io/ipfs/${resource.resourceIPFSHash}`}</i></h4>
-                    }
-                  </td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
-
+          <h3><i><b>Upload your resource links containg file to the IPFS here :</b></i></h3>
+          <form>
+            <div className="form-group mt-4">
+              <input
+                id="resourceName"
+                type="text"
+                ref={(input) => { this.resourceName = input }}
+                className="form-control form-width"
+                placeholder="Resource Name"
+                required />
+            </div>
+            <div className="form-group">
+              <input
+                id="resourcePrice"
+                type="text"
+                ref={(input) => { this.resourcePrice = input }}
+                className="form-control form-width"
+                placeholder="Resource Price"
+                required />
+            </div>
+          </form>
+          <input type='file' onChange={this.captureFile} className='btn btn-light form-width' />
+          <br />
+          <button type="submit" className="btn btn-dark mt-4" onClick={this.formSubmit}>Upload Resource Details</button>
+        </div>
+        <div className='m-4'>
+          <h3 className=''><i><b>Buy Products :</b></i></h3>
+          <table className="table table-bordered mt-4 text-center text-white table-dark">
+            <thead>
+              <tr>
+                <th scope="col"><i>Sl no.</i></th>
+                <th scope="col"><i>Resource Name</i></th>
+                <th scope="col"><i>Resource Link Price</i></th>
+                <th scope="col"><i>Owner Address</i></th>
+                <th scope="col"><i>File Download Link</i></th>
+              </tr>
+            </thead>
+            <tbody id="resourceList">
+              {this.props.resources.map((resource, key) => {
+                return (
+                  <tr key={key}>
+                    <th scope="row">{resource.id.toString()}</th>
+                    <td>{resource.name}</td>
+                    <td>{window.web3.utils.fromWei(resource.price.toString(), 'Ether')} Eth</td>
+                    <td>{resource.owner}</td>
+                    <td>
+                      {
+                        !resource.purchased
+                          ?
+                          <button name={resource.id} value={resource.price} className='btn btn-dark btn-block'
+                            onClick={(event) => { this.props.buyResource(event.target.name, event.target.value) }}>
+                            Buy</button>
+                          :
+                          resource.owner === this.props.account
+                            ?
+                            <i>{`https://ipfs.infura.io/ipfs/${resource.resourceIPFSHash}`}</i>
+                            :
+                            resource.purchased && resource.owner != this.props.account
+                              ?
+                              <b><i>This item is sold out !</i></b>
+                              :
+                              null
+                      }
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
+
     );
   }
 }

@@ -30,7 +30,7 @@ contract('Marketplace', ([deployer, seller, buyer]) => {
       resourceCount = await marketplace.resourceCount()
     })
 
-    it('adds resources and fetches ipfs hash of the resource', async () => {
+    it('uploads resources details and fetches ipfs hash of the resource', async () => {
       // SUCCESS
       assert.equal(resourceCount, 1)
       const event = result.logs[0].args

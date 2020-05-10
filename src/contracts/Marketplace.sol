@@ -1,6 +1,5 @@
 pragma solidity ^0.5.0;
 
-
 contract Marketplace {
     uint256 public resourceCount = 0;
     mapping(uint256 => Resource) public resources;
