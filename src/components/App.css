@@ -1,39 +1,7 @@
-.design {
-  width: 1800px;
-  height: fit-content;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
-  padding: 5px;
-  margin: 60px;
-  color: white;
-  background: linear-gradient(to right, rgb(1, 58, 173), rgba(1, 58, 173, 0.109));
-  border-radius: 15px;
-}
-
-.user {
-  padding: 10px;
-  font-size: 10px;
-  width: 1800px;
-  height: fit-content;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
-  margin: 60px;
-  color: black;
-  background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0.363));
-  border-radius: 15px;
-}
-
-.form-width {
-  width: 300px;
-}
-
-.user {
-  width: 1000px;
-  height: fit-content;
-  background-color: rgb(255, 255, 255);
+.product-details {
+  border-radius: 10px;
+  width: 450px;
   padding: 20px;
-  margin-left: 5px;
-  margin-top: 5px;
-}
-
-body {
-  background-color: rgb(109, 218, 245);
+  margin: 15px;
+  background-color: rgba(154, 57, 211, 0.363);
 }

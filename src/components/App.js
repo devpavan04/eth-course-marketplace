@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-import Web3 from 'web3'
+import Web3 from 'web3';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Marketplace from '../abis/Marketplace.json';
+import Nav from './Nav';
+import Home from './Home';
+import Sell from './Sell';
+import Buy from './Buy';
+import Purchased from './Purchased';
 import './App.css';
-import Marketplace from '../abis/Marketplace.json'
-import Main from './Main'
 
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
@@ -97,31 +102,54 @@ class App extends Component {
         this.setState({ loading: false })
       })
   }
-  
+
   render() {
     return (
       <div className=''>
+        {
+          this.state.loading
+            ?
+            <div id="loader" className="text-center"><p className="text-center"><h1 className='display-display-4 mt-5'><i>Loading...</i></h1></p></div>
+            :
+            <div>
+              <Router>
+                <Nav />
+                <Switch>
+                  <Route path='/' exact render={() =>
+                    <Home
+                      account={this.state.account}
+                      accountBalance={this.state.accountBalance} />}
+                  />
 
-        <div className="mt-5">
-          <div role="main" className="">
-            {
-              this.state.loading
-                ?
-                <div id="loader" className="text-center"><p className="text-center">Loading...</p></div>
-                :
-                <Main
-                  resources={this.state.resources}
-                  addResourceDetails={this.addResourceDetails}
-                  buyResource={this.buyResource}
-                  onSubmit={this.onSubmit}
-                  captureFile={this.captureFile}
-                  account={this.state.account}
-                  accountBalance={this.state.accountBalance}
-                />
-            }
-          </div>
-        </div>
+                  <Route path='/sell' render={() =>
+                    <Sell
+                      resources={this.state.resources}
+                      addResourceDetails={this.addResourceDetails}
+                      buyResource={this.buyResource}
+                      account={this.state.account}
+                      accountBalance={this.state.accountBalance} />}
+                  />
 
+                  <Route path='/buy' render={() =>
+                    <Buy
+                      resources={this.state.resources}
+                      addResourceDetails={this.addResourceDetails}
+                      buyResource={this.buyResource}
+                      account={this.state.account}
+                      accountBalance={this.state.accountBalance} />}
+                  />
+
+                  <Route path='/purchased' render={() =>
+                    <Purchased
+                      resources={this.state.resources}
+                      account={this.state.account}
+                      accountBalance={this.state.accountBalance} />}
+                  />
+                </Switch>
+
+              </Router>
+            </div>
+        }
       </div>
     );
   }
