@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../Styles/Purchased.css';
 
 class Purchased extends Component {
 
@@ -11,18 +11,23 @@ class Purchased extends Component {
 
   render() {
     return (
-      <div className=''>
+      <div className='container mt-3'>
+        <div className=''>
+          <h1>Your Courses :</h1>
+        </div>
         <div>
           {this.props.resources.map((resource, key) => {
             return (
-              <div>
+              <div className=''>
                 {
                   resource.purchased && resource.owner === this.props.account
                     ?
-                    <div className=''>
-                      <i>{`https://ipfs.infura.io/ipfs/${resource.resourceIPFSHash}`}</i>
+                    <div className='mt-4 your-course'>
+                      <h4>Course Name :</h4>
+                      <h5>{resource.name}</h5>
                       <br></br>
-                      <b>{resource.name}</b>
+                      <h4>Course Download Link :</h4>
+                      <h5>{`https://ipfs.infura.io/ipfs/${resource.resourceIPFSHash}`}</h5>
                     </div>
                     :
                     null

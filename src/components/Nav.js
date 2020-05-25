@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import '../Styles/Nav.css';
 import { Link } from 'react-router-dom';
-import './App.css';
 
 class Nav extends Component {
 
@@ -12,8 +12,8 @@ class Nav extends Component {
 
   render() {
     return (
-      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-        <ul class="navbar-nav">
+      <nav class="navbar navbar-expand-lg nav-style">
+        <ul class="navbar-nav text-white">
           <Link to='/'>
             <li class="nav-item">
               <a class="nav-link" href="#">Home</a>

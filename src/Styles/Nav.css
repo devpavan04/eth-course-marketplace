@@ -1,0 +1,11 @@
+.nav-style {
+  background-color: black;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+a {
+  color: white;
+  font-family: 'Muli', sans-serif;
+  font-size: 1em;
+}
