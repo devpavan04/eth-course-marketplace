@@ -7,19 +7,6 @@
   background-color: rgb(0, 0, 0);
 }
 
-h4 {
-  font-family: 'Oswald', sans-serif;
-  /* text-transform: uppercase; */
-}
-
-h6 {
-  font-weight: 500;
-}
-
-body {
-  height: 100vh;
-}
-
 .btn-style {
   background-color: rgba(100, 98, 98, 0.555);
   color: whitesmoke;

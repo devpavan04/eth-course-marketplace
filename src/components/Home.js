@@ -11,7 +11,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div className='container home'>
+      <div className='ml-4 mt-4'>
         <div>
           <h2 className='display-1'>Decentralized Marketplace</h2>
         </div>

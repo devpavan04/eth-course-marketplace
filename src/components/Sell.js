@@ -29,10 +29,11 @@ class Sell extends Component {
 
   render() {
     return (
-      <div className='container mt-4'>
+      <div className='ml-4 mt-4'>
         <div className='ml-0'>
           <h1>Upload the file containing course links to IPFS :</h1>
         </div>
+        <hr></hr>
         <div className='mt-3 sell-style'>
           <div>
             <form>

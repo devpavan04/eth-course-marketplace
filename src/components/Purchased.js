@@ -11,10 +11,11 @@ class Purchased extends Component {
 
   render() {
     return (
-      <div className='container mt-3'>
+      <div className='ml-4 mt-4'>
         <div className=''>
           <h1>Your Courses :</h1>
         </div>
+        <hr></hr>
         <div>
           {this.props.resources.map((resource, key) => {
             return (

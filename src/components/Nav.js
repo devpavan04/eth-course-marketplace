@@ -19,6 +19,8 @@ class Nav extends Component {
               <a class="nav-link" href="#">Home</a>
             </li>
           </Link>
+        </ul>
+        <ul class="navbar-nav text-white ul-style">
           <Link to='/sell'>
             <li class="nav-item">
               <a class="nav-link" href="#">Sell Course</a>

@@ -15,6 +15,7 @@ class Buy extends Component {
         <div className='ml-3 mt-3'>
           <h1>Course Catalogue :</h1>
         </div>
+        <hr></hr>
         <div className='d-flex flex-wrap'>
           {this.props.resources.map((resource, key) => {
             return (
