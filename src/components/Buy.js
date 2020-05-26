@@ -11,42 +11,41 @@ class Buy extends Component {
 
   render() {
     return (
-      <div>
-        <div className='ml-3 mt-3'>
-          <h1>Course Catalogue :</h1>
+      <div className=''>
+        <div className='buy-heading'>
+          <h1 className='ml-5 mt-2 display-4'>Course Catalogue :</h1>
         </div>
-        <hr></hr>
         <div className='d-flex flex-wrap'>
           {this.props.resources.map((resource, key) => {
             return (
-              <div className='Course-details shadow-lg'>
-                <h4>Course name</h4>
+              <div className='course-details'>
+                <h5><b><i>Course name :</i></b></h5>
                 <h5>{resource.name}</h5>
-                <br></br>
-                <h4>Course price</h4>
+                <hr></hr>
+                <h5><b><i>Course price :</i></b></h5>
                 <h5>{window.web3.utils.fromWei(resource.price.toString(), 'Ether')} Eth</h5>
-                <br></br>
-                <h4>Course owner</h4>
-                <h6>{resource.owner}</h6>
-                <br></br>
+                <hr></hr>
+                <h5><b><i></i>Course owner :</b></h5>
+                <p>{resource.owner}</p>
+                <hr></hr>
                 {
                   !resource.purchased && resource.owner != this.props.account
                     ?
-                    <button name={resource.id} value={resource.price} className='btn btn-block btn-style'
+                    <button name={resource.id} value={resource.price} className='btn btn-block btn-primary btn-style'
                       onClick={(event) => { this.props.buyResource(event.target.name, event.target.value) }}>
                       Buy</button>
                     :
                     resource.purchased && resource.owner != this.props.account
                       ?
-                      <h5><b><i>Sold out !</i></b></h5>
+                      <button name={resource.id} value={resource.price} className='btn btn-block btn-danger btn-style'>Sold out !</button>
                       :
                       resource.purchased && resource.owner == this.props.account
                         ?
-                        <h5><b><i>Purchased &nbsp;	&#10004;</i></b></h5>
+                        <button name={resource.id} value={resource.price} className='btn btn-block btn-success btn-style'>Purchased</button>
                         :
-                        resource.owner == this.props.account && !resource.purchased
+                        !resource.purchased && resource.owner == this.props.account
                           ?
-                          <h5><b><i>Added to catalogue	&#128077;</i></b></h5>
+                          <button name={resource.id} value={resource.price} className='btn btn-block btn-info btn-style'>Not sold...</button>
                           :
                           null
                 }

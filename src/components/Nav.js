@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Navbar from 'react-bootstrap/Navbar';
 import '../Styles/Nav.css';
 import { Link } from 'react-router-dom';
 
@@ -12,32 +13,22 @@ class Nav extends Component {
 
   render() {
     return (
-      <nav class="navbar navbar-expand-lg nav-style">
-        <ul class="navbar-nav text-white">
+      <div className=''>
+        <Navbar className='nav-styling'>
           <Link to='/'>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-            </li>
+            <Navbar.Brand href="#home">Home</Navbar.Brand>
           </Link>
-        </ul>
-        <ul class="navbar-nav text-white ul-style">
           <Link to='/sell'>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Sell Course</a>
-            </li>
+            <Navbar.Brand href="#home">Sell Course</Navbar.Brand>
           </Link>
           <Link to='/buy'>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Buy Course</a>
-            </li>
+            <Navbar.Brand href="#home">Buy Course</Navbar.Brand>
           </Link>
           <Link to='/purchased'>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Purchased Items</a>
-            </li>
+            <Navbar.Brand href="#home">Purchased Items</Navbar.Brand>
           </Link>
-        </ul>
-      </nav>
+        </Navbar>
+      </div>
     );
   }
 }

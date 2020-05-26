@@ -108,7 +108,7 @@ class App extends Component {
         {
           this.state.loading
             ?
-            <div id="loader" className="text-center"><p className="text-center"><h1 className='display-display-4 mt-5'><i>Loading...</i></h1></p></div>
+            <div id="loader" className="text-center"><p className="text-center"><h1 className='display-4 mt-5'><i>Loading...</i></h1></p></div>
             :
             <div>
               <Router>
@@ -119,7 +119,6 @@ class App extends Component {
                       account={this.state.account}
                       accountBalance={this.state.accountBalance} />}
                   />
-
                   <Route path='/sell' render={() =>
                     <Sell
                       resources={this.state.resources}
@@ -128,7 +127,6 @@ class App extends Component {
                       account={this.state.account}
                       accountBalance={this.state.accountBalance} />}
                   />
-
                   <Route path='/buy' render={() =>
                     <Buy
                       resources={this.state.resources}
@@ -137,7 +135,6 @@ class App extends Component {
                       account={this.state.account}
                       accountBalance={this.state.accountBalance} />}
                   />
-
                   <Route path='/purchased' render={() =>
                     <Purchased
                       resources={this.state.resources}
@@ -145,7 +142,6 @@ class App extends Component {
                       accountBalance={this.state.accountBalance} />}
                   />
                 </Switch>
-
               </Router>
             </div>
         }

@@ -11,23 +11,22 @@ class Purchased extends Component {
 
   render() {
     return (
-      <div className='ml-4 mt-4'>
-        <div className=''>
-          <h1>Your Courses :</h1>
+      <div className=''>
+        <div className='purchased-heading'>
+          <h1 className='ml-5 mt-2 display-4'>Your Courses :</h1>
         </div>
-        <hr></hr>
-        <div>
+        <div className='purchased-styling'>
           {this.props.resources.map((resource, key) => {
             return (
-              <div className=''>
+              <div >
                 {
                   resource.purchased && resource.owner === this.props.account
                     ?
-                    <div className='mt-4 your-course'>
-                      <h4>Course Name :</h4>
+                    <div className='your-course'>
+                      <h5><b><i>Course Name :</i></b></h5>
                       <h5>{resource.name}</h5>
-                      <br></br>
-                      <h4>Course Download Link :</h4>
+                      <hr></hr>
+                      <h5><b><i>Course Download Link :</i></b></h5>
                       <h5>{`https://ipfs.infura.io/ipfs/${resource.resourceIPFSHash}`}</h5>
                     </div>
                     :

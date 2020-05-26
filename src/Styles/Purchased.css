@@ -1,7 +1,22 @@
 .your-course {
-  width: 1050px;
-  padding: 25px;
-  border-radius: 15px;
-  color: whitesmoke;
-  background-color: rgb(0, 0, 0);
+  width: 1000px;
+  padding: 15px;
+  margin-bottom: 10px;
+  color: rgb(0, 0, 0);
+  border-bottom: 4mm ridge rgb(170, 50, 220, 0.6);
+}
+
+.purchased-heading {
+  color: #000000;
+  padding: 10px;
+  margin-top: 5px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+
+.purchased-styling {
+  height: max-content;
+  padding-left: 60px;
+  padding-top: 10px;
+  padding-bottom: 40px;
 }

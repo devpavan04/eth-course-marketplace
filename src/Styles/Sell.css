@@ -1,9 +1,33 @@
-.input-style{
+.input-style {
+  width: 300px;
+}
+
+.capture-style {
   width: 300px;
   border: none;
 }
 
-.capture-style{
-  width: 300px;
-  border: none;
+.sell-heading {
+  color: #000000;
+  padding: 10px;
+  margin-top: 5px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+
+.sell-styling {
+  width: 450px;
+  height: max-content;
+  padding: 25px;
+  margin-left: 60px;
+  border-left: 4mm ridge rgb(170, 50, 220, .6);
+}
+
+.btn-styling {
+  background-color: rgba(0, 0, 0, 0.815);
+  color: white;
+}
+
+.btn-styling:hover {
+  color: white;
 }

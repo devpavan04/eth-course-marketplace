@@ -29,39 +29,42 @@ class Sell extends Component {
 
   render() {
     return (
-      <div className='ml-4 mt-4'>
-        <div className='ml-0'>
-          <h1>Upload the file containing course links to IPFS :</h1>
+      <div className=''>
+        <div className='sell-heading'>
+          <h1 className='ml-5 mt-2 display-4'>Course Catalogue :</h1>
         </div>
-        <hr></hr>
-        <div className='mt-3 sell-style'>
-          <div>
-            <form>
-              <div className="form-group">
-                <input
-                  id="resourceName"
-                  type="text"
-                  ref={(input) => { this.resourceName = input }}
-                  className="form-control text-black input-style"
-                  placeholder="Course Name ex: Javascript"
-                  required />
-              </div>
-              <div className="form-group">
-                <input
-                  id="resourcePrice"
-                  type="text"
-                  ref={(input) => { this.resourcePrice = input }}
-                  className="form-control text-black input-style"
-                  placeholder="Course Price ex: 2 ETH"
-                  required />
-              </div>
-            </form>
-          </div>
-          <div className='mt-3'>
+        <div className='sell-styling'>
+          <form>
+            <h5><b><i>Course name :</i></b></h5>
+            <div className="form-group">
+              <input
+                id="resourceName"
+                type="text"
+                ref={(input) => { this.resourceName = input }}
+                className="form-control text-black input-style"
+                placeholder="Course Name ex: Javascript"
+                required />
+            </div>
+            <hr></hr>
+            <h5><b><i>Course price :</i></b></h5>
+            <div className="form-group">
+              <input
+                id="resourcePrice"
+                type="text"
+                ref={(input) => { this.resourcePrice = input }}
+                className="form-control text-black input-style"
+                placeholder="Course Price ex: 2 ETH"
+                required />
+            </div>
+          </form>
+          <hr></hr>
+          <h5><b><i>Select file or image :</i></b></h5>
+          <div className='mt-2'>
             <input type='file' onChange={this.captureFile} className='btn btn-light capture-style' />
           </div>
+          <hr></hr>
           <div>
-            <button type="submit" className="btn btn-dark mt-4" onClick={this.formSubmit}>Upload Course Links</button>
+            <button type="submit" className="btn mt-2 btn-styling" onClick={this.formSubmit}>Upload to IPFS</button>
           </div>
         </div>
       </div>

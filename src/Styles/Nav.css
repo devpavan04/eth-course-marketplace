@@ -1,15 +1,3 @@
-.nav-style {
+.nav-styling {
   background-color: black;
-  font-size: 19px;
-  font-weight: 500;
-}
-
-a {
-  color: white;
-  font-family: 'Muli', sans-serif;
-  font-size: 1em;
-}
-
-.ul-style {
-  margin-left: 140vh;
 }
