@@ -97,6 +97,7 @@ class App extends Component {
     this.setState({ loading: true })
     this.state.marketplace.methods.buyResource(id).send({ from: this.state.account, value: price })
       .once('receipt', (receipt) => {
+        console.log(receipt)
         this.setState({ loading: false })
       })
   }
@@ -107,7 +108,7 @@ class App extends Component {
         {
           this.state.loading
             ?
-            <div id="loader" className="text-center"><p className="text-center"><h1 className='display-4 mt-5'><i>Loading...</i></h1></p></div>
+            <div id="loader" className="text-center"><p className="text-center"><h1 className='loading-class'>Loading...</h1></p></div>
             :
             <div>
               <Router>

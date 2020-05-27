@@ -5,8 +5,6 @@ class Purchased extends Component {
 
   constructor() {
     super();
-    this.state = {
-    }
   }
 
   render() {
