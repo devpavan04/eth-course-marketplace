@@ -13,7 +13,7 @@ class Nav extends Component {
 
   render() {
     return (
-      <div className=''>
+      <div>
         <Navbar className='nav-styling'>
           <Link to='/'>
             <Navbar.Brand href="#home">Home</Navbar.Brand>

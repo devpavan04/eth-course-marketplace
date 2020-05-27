@@ -10,24 +10,30 @@
 .sell-heading {
   color: #000000;
   padding: 10px;
-  margin-top: 5px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Playfair Display SC', serif;
   text-transform: uppercase;
 }
 
 .sell-styling {
   width: 450px;
   height: max-content;
+  margin-top: 30px;
   padding: 25px;
   margin-left: 60px;
-  border-left: 4mm ridge rgb(170, 50, 220, .6);
+  border-radius: 15px;
+  color: white;
+  background-color: rgb(0, 0, 0);
 }
 
 .btn-styling {
-  background-color: rgba(0, 0, 0, 0.815);
-  color: white;
+  background-color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.2em;
+  color: rgb(0, 0, 0);
 }
 
-.btn-styling:hover {
-  color: white;
+.main-sell-style {
+  background-color: white;
+  height: 100vh;
 }

@@ -22,7 +22,7 @@ class App extends Component {
       resources: [],
       loading: true,
       resourceIPFSHash: null,
-      buffer: null
+      buffer: null,
     }
   }
 
@@ -67,7 +67,6 @@ class App extends Component {
       const resourceCount = await marketplace.methods.resourceCount().call()
       this.setState({ resourceCount })
 
-      // Load resources
       for (var i = 1; i <= resourceCount; i++) {
         const product = await marketplace.methods.resources(i).call()
         this.setState({
@@ -104,7 +103,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className=''>
+      <div>
         {
           this.state.loading
             ?

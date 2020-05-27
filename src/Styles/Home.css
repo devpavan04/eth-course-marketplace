@@ -1,5 +1,5 @@
 body {
-  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  background: linear-gradient(110deg, #ffffff 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #c03fff 70%, #9b1bf0 70%);
   height: 100vh;
 }
 
@@ -36,7 +36,16 @@ a:hover {
   width: max-content;
   height: max-content;
   padding: 25px;
-  margin-top: 50px;
-  margin-left: 60px;
-  border-bottom: 4mm ridge rgb(170, 50, 220, .6);
+  margin-top: 100px;
+  margin-left: 50px;
+  border-radius: 10px;
+  border-left: 2mm ridge rgba(68, 67, 67, 0.6);
+}
+
+.head-02 {
+  margin-left: 50vh;
+}
+
+.sub-01 {
+  margin-left: 80vh;
 }

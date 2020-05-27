@@ -11,9 +11,9 @@ class Buy extends Component {
 
   render() {
     return (
-      <div className=''>
+      <div className='main-buy-style'>
         <div className='buy-heading'>
-          <h1 className='ml-5 mt-2 display-4'>Course Catalogue :</h1>
+          <h1 className='ml-5 mt-2 display-3'>Course Catalogue :</h1>
         </div>
         <div className='d-flex flex-wrap'>
           {this.props.resources.map((resource, key) => {

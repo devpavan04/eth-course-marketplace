@@ -1,10 +1,11 @@
 .course-details {
-  border-top: 2mm ridge rgb(170, 50, 220, .6);
+  background-color: rgb(0, 0, 0);
+  margin-top: 30px;
+  border-radius: 10px;
   width: 450px;
   padding: 12px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   margin-left: 60px;
-  margin-top: 12px;
 }
 
 .btn-style {
@@ -15,7 +16,12 @@
 .buy-heading {
   color: #000000;
   padding: 10px;
-  margin-top: 5px;
-  font-family: 'Oswald', sans-serif;
+  margin-top: 0px;
+  font-family: 'Playfair Display SC', serif;
   text-transform: uppercase;
+}
+
+.main-buy-style {
+  background-color: white;
+  height: 100vh;
 }

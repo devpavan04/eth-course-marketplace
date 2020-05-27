@@ -11,9 +11,9 @@ class Purchased extends Component {
 
   render() {
     return (
-      <div className=''>
+      <div className='main-purchased-style'>
         <div className='purchased-heading'>
-          <h1 className='ml-5 mt-2 display-4'>Your Courses :</h1>
+          <h1 className='ml-5 mt-2 display-3'>Your Courses :</h1>
         </div>
         <div className='purchased-styling'>
           {this.props.resources.map((resource, key) => {

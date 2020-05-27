@@ -29,9 +29,9 @@ class Sell extends Component {
 
   render() {
     return (
-      <div className=''>
+      <div className='main-sell-style'>
         <div className='sell-heading'>
-          <h1 className='ml-5 mt-2 display-4'>Course Catalogue :</h1>
+          <h1 className='ml-5 mt-2 display-3'>Upload Image or File :</h1>
         </div>
         <div className='sell-styling'>
           <form>
