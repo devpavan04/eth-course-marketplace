@@ -1,4 +1,4 @@
-# **_Voting_ _DApp_**
+# **_Marketplace_ _DApp_**
 
 ## Steps to run the application :
 
