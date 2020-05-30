@@ -40,14 +40,14 @@ npm start
 
 ## Snapshots :
 
-### Admin
-![alt text](https://github.com/devpavan04/eth-vote/blob/master/markdownImages/admin.jpg?raw=true)
+### Home
+![alt text](https://github.com/devpavan04/eth-marketplace/blob/master/snapshots/IMG-20200527-WA0007.jpg?raw=true)
 
-### Voter
-![alt text](https://github.com/devpavan04/eth-vote/blob/master/markdownImages/voter.jpg?raw=true)
+### Upload file/image to IPFS
+![alt text](https://github.com/devpavan04/eth-marketplace/blob/master/snapshots/IMG-20200527-WA0008.jpg?raw=true)
 
-### Voter
-![alt text](https://github.com/devpavan04/eth-vote/blob/master/markdownImages/voter.jpg?raw=true)
+### Buy items
+![alt text](https://github.com/devpavan04/eth-marketplace/blob/master/snapshots/IMG-20200527-WA0009.jpg?raw=true)
 
-### Voter
-![alt text](https://github.com/devpavan04/eth-vote/blob/master/markdownImages/voter.jpg?raw=true)
+### Purchased items
+![alt text](https://github.com/devpavan04/eth-marketplace/blob/master/snapshots/IMG-20200527-WA0010.jpg?raw=true)
